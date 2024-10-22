@@ -13,15 +13,12 @@ const cors = require("cors");
 app.use(express.json());
 // CORS configuration
 const corsOptions = {
-  origin: 'https://client-side-ahmedmahmoud929-ahmedmahmoud929s-projects.vercel.app', // Replace with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers if needed
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  origin:
+    "https://client-side-ahmedmahmoud929-ahmedmahmoud929s-projects.vercel.app",
 };
 
 // Use CORS with options
 app.use(cors(corsOptions));
-
 
 // Routes
 app.get("/", (req, res) => res.send("Please go to /api/"));
