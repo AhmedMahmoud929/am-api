@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+app.use("/", (req, res) => res.send("Please go to /api/"));
 app.use("/api/dashboard", checkAuth, dashboardRouter);
 app.use("/api/projects", projectsRouter);
 app.use("/api/messages", messagesRouter);
