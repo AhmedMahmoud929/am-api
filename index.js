@@ -11,10 +11,16 @@ const checkAuth = require("./middlewares/auth.mw");
 const cors = require("cors");
 // MiddleWares
 app.use(express.json());
-app.use(cors());
-app.use(cors({
-  origin: 'https://client-side-ahmedmahmoud929-ahmedmahmoud929s-projects.vercel.app'
-}));
+// CORS configuration
+const corsOptions = {
+  origin: 'https://client-side-ahmedmahmoud929-ahmedmahmoud929s-projects.vercel.app', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers if needed
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+};
+
+// Use CORS with options
+app.use(cors(corsOptions));
 
 
 // Routes
