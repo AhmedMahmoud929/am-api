@@ -9,11 +9,13 @@ const usersRouter = require("./routers/users.router");
 const messagesRouter = require("./routers/messages.router");
 const checkAuth = require("./middlewares/auth.mw");
 const cors = require("cors");
-const path = require("path");
-
 // MiddleWares
 app.use(express.json());
 app.use(cors());
+app.use(cors({
+  origin: 'https://client-side-ahmedmahmoud929-ahmedmahmoud929s-projects.vercel.app'
+}));
+
 
 // Routes
 app.get("/", (req, res) => res.send("Please go to /api/"));
